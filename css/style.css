@@ -1,0 +1,655 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Header Start */
+header {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    z-index: 55555;
+}
+header a {
+    text-decoration: none;
+    color: rgb(210, 210, 50);
+}
+header a:hover {
+    opacity: 0.8;
+}
+header .ul-large {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    list-style: none;
+}
+header .ul-large li {}
+header .ul-large li a {
+    text-decoration: none;
+    color: white;
+}
+header .ul-large li a:hover {
+   opacity: 0.8;
+}
+header .main-list  {
+    display: none;
+}
+header .main-list .list {
+    width: 50px;
+    background-color: rgb(210, 210, 50);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+}
+header .main-list .list:hover .ch {
+    width: 30px;
+    transition: 0.5s;
+}
+header .main-list .list .option {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+header .main-list .list .ch {
+    width: 15px;
+}
+header .main-list .list .ul-small {
+    display: none;
+    background-color: rgb(210, 210, 50);
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 55;
+    list-style: none;
+}
+header .main-list .list:hover .ul-small::before {
+    content: "";
+    width: 0;
+    border: 10px solid black;
+    border-color: transparent transparent rgb(210, 210, 50) transparent;
+    position: absolute;
+    top: -20px;
+    right: 22%;
+}
+header .main-list .list:hover .ul-small {
+    display: block;
+}
+header .main-list .list .ul-small li {
+    padding: 10px;
+    cursor: pointer;
+
+}
+header .main-list .list .ul-small li:hover a {
+    padding-left: 30px;
+    transition: 1s;
+}
+header .main-list .list .ul-small li:not(:last-child) {
+    border-bottom: 2px solid black;
+}
+header .main-list .list .ul-small li a {
+    color: black;
+    text-decoration: none;
+}
+/* Media In Header Start */
+@media (max-width: 951px) {
+    header .main-list {
+        display: flex;
+    }
+    header .ul-large {
+        display: none;
+    }
+}
+/* Media In Header End */
+/* Header End */
+
+/* Section Start */
+section  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #2e2a2a;
+}
+/* Slid Start */
+section  .slid {
+    height: 600px;
+    background-image: url(../images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+    animation-name: slider;
+    animation-duration: 8s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+section .slid .group-1 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 50px;
+}
+section .slid .group-1  h1 {
+    color: white;    
+    position: relative;
+    left: 22%;
+    font-size: 30px;
+}
+section .slid .group-1  h1 span{
+    color: rgb(210, 210, 50);
+    font-size: 20px;
+    /* display: block; */
+}
+section .slid .group-1   p {
+    color: white;    
+}
+section .slid .group-1 .btn-slid  a {
+    width: auto;
+    text-align: center;
+    color: white;
+    background-color: rgb(210, 210, 50);
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    
+}
+section .slid .group-1 .btn-slid  a:hover {
+    color: black;
+    opacity: 0.8;
+}
+/* Animation slid Start  */
+@keyframes slider {
+    0% {
+        background-image: url(../images/2.jpg);
+    }
+    25% {
+        background-image: url(../images/3.jpg);
+    }
+    50% {
+        background-image: url(../images/4.jpg);
+    }
+    75% {
+        background-image: url(../images/5.jpg);
+    }
+    100% {
+        background-image: url(../images/6.jpg);
+    }
+}
+/* Animation slid End */
+/* Slid End */
+/* Our Food Start */
+section .our-food {
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 50px;
+} 
+section .our-food .head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+section .our-food .head h2 {
+    font-size: 30px;
+}
+section .our-food .head p {
+    line-height: 1.8;
+    word-spacing: 5px;
+}
+section .our-food .cards-1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+section .our-food .cards-1 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+    border-radius: 5px;
+    transition: 0.8s;
+}
+section .our-food .cards-1 .card:hover {
+    background-color: rgba(0, 0, 0, 0.193);
+}
+section .our-food .cards-1 .card:hover span {
+    color: black;
+}
+section .our-food .cards-1 .card .photo {
+    width: 100%;
+    text-align: center;
+}
+section .our-food .cards-1 .card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px black ,-1px -1px 5px black;
+}
+section .our-food .cards-1 .card h3 {
+   text-align: center;
+   font-weight: bold;
+   font-size: 20px;
+}
+section .our-food .cards-1 .card p {
+    word-spacing: 5px;
+    text-align: center;
+    line-height: 1.5;
+}
+section .our-food .cards-1 .card span {
+   display: block;
+   width: 100%;
+   color: green;
+   text-align: center;
+}
+/* Media Oue Food Start */
+@media (max-width: 800px) {
+    .cards-1 {
+        flex-direction: column;
+    }
+
+}
+/* Media Oue Food End */
+/* Our Food End */
+/* About Start */
+.about-food {
+    width: 100%;
+    /* background-image: url(../images/2.jpg); */
+    /* background-position: left center; */
+    /* background-size: cover; */
+    /* height: 600px; */
+    /* background-repeat: no-repeat; */
+    background-color: #000;
+}
+.about-food .group-2 {
+    width: 100%;
+    /* background-color: rgba(15, 1, 1, 0.438); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5% 0 0 0;
+    padding: 5%;
+    gap: 50px;
+}
+.about-food .group-2 .desc {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: fit-content;
+    color: white;
+}
+.about-food .group-2 h3 {
+    word-spacing: 5px;
+    line-height: 1.5;
+}
+.about-food .group-2 p {
+    
+}
+.about-food .group-2 .btn-about a {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(210, 210, 47);
+    padding: 10px;
+    border-radius: 10px;
+}
+.about-food .group-2 .photo-2 img {
+    width: 300px;
+    border-radius: 10px;
+    animation-name: image-about;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: center ;
+    border-radius: 50%;
+
+}
+.about-food .group-2 .photo-2 {
+    perspective: 500px;
+    background-color: #393838;
+    /* overflow: hidden; */
+    border-radius: 50%;
+
+}
+.about-food .group-2 .photo-2:hover img {
+    opacity: 0.8;
+    border-radius: 50%;
+}
+/* Media About-Food Start  */
+@media (max-width: 951px) {
+    .about-food .group-2 {
+        flex-direction: column;
+    }
+}
+/* Media About-Food End  */
+/* Animation In About Food Start */
+@keyframes image-about {
+    0% {
+        transform: rotatex(360deg);
+    }
+    50% {
+        transform: rotatex(-360deg);
+    }
+    100% {
+        
+        transform: translatex(0);
+    }
+}
+/* Animation In About Food End */
+/* About End */
+/* Food Brands Start */
+section .food-brands {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+}
+section .food-brands .head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section .food-brands .head h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold; 
+}
+section .food-brands .head p {
+    
+}
+section .food-brands .cards-2 {
+    width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+}
+section .food-brands .cards-2 .card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px ;
+    box-shadow: 2px 2px 1px 5px rgba(0, 0, 0, 0.12),-2px -2px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    padding: 0 0 2% 0;
+    height: 250px;
+}
+section .food-brands .cards-2 .card .photo-3  {
+    width: 100%;
+    text-align: center;
+}
+section .food-brands .cards-2 .card .photo-3 img {
+    width: 200px;
+    border-radius: 5px;
+}
+section .food-brands .cards-2 .card p {
+    /* padding: 10px; */
+    font-size: 14px;
+    text-align: center;
+}
+/* Media Food Brands Start */
+    @media 
+    (max-width: 951px) {
+        .food-brands .cards-2 {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+/* Media Food Brands End */
+/* Food Brands End */
+/* Contact Start */
+section .contact {
+    width: 100%;
+    /* background-color: #0e0a00; */
+    /* background-image: url(../images/P-fresh.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100%; */
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    gap: 50px;
+    font-size: 20px;
+}
+section .contact h3 {
+    color: black;
+}   
+section .contact form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #dddddd37; */
+    padding: 5%;
+    border-radius: 10px;
+    gap: 50px;
+}
+section .contact form h4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 1%;
+    color: white;
+    border-bottom: 1px solid white;
+}
+section .contact form .countaner {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10%;
+    gap: 30px;
+    border-radius: 20px;
+}
+section .contact .countaner .name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section .contact .countaner .name label {
+    color: white;
+}
+section .contact .countaner .email label {
+    color: white;
+}
+section .contact .countaner .subjet label {
+    color: white;
+}
+section .contact .countaner .name input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    border-bottom: 2px solid black;
+    /* color: white; */
+}
+section .contact .countaner .email {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section .contact .countaner .email input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    border-bottom: 2px solid black;
+}
+section .contact .countaner .subjet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section .contact .countaner .subjet input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+section .contact .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+section .contact .inputs input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    background-color: #aaa;
+    cursor: pointer;
+    width: 100%;
+}
+/* Contact End */
+/* Footer Start */
+footer {
+    width: 100%;
+    background-color: #000;
+    padding: 5%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+footer .head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+footer .head .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+footer .head .icon-contact {
+    display: flex;
+    align-items: center;
+}
+footer .head .contact h4 {
+    width: 100%;
+    padding-left: 5%;
+    font-size: 20px;
+}
+
+footer .head .contact .icon-contact a i {
+    font-size: 30px;
+    color: white;
+    margin-right: 10px;
+}
+footer .head .contact .icon-contact span {
+
+}
+
+footer .head .icones-social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer .head .icones-social .photo-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .head .icones-social .photo-footer span {
+    color: rgb(210, 210, 50);
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10%;
+}
+
+footer .head .icones-social .icones {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 20px;
+}
+footer .head .icones-social .icones a i {
+    color: white;
+    font-size: 30px;
+    transition: color 1s;
+}
+footer .head .icones-social .icones a i:hover {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.286);
+}
+footer .head .icones-social .icones img {
+    width: 30px;
+}
+
+footer .head .quick-link {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer .head .quick-link h4 {
+    
+}
+footer .head .quick-link ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .head .quick-link ul li {
+    list-style: none;
+}
+footer .head .quick-link ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer .foot {
+    width: 100%;
+    text-align: center;
+}
+/* Medai Footer Start */
+@media (max-width: 951px) {
+   footer .head {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Medai Footer End */
+/* Footer End */
+/* Section End */
